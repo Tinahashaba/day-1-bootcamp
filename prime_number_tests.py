@@ -15,8 +15,12 @@ class TestForPrimeNumbers(unittest.TestCase):
         self.assertEqual([], result, "function should return an empty list")
 
     def test_function_returns_a_list_of_integer(self):
-        self.assertEqual(all(isinstance(int, n) for n in prime_number(10)), "Returned list has non-integer elements")
+        self.assertTrue(all(isinstance(n, int) for n in prime_number(10)), "Returned list has non-integer elements")
 
     def test_function_returns_correct_result(self):
         result = prime_number(10)
         self.assertEqual([2, 3, 5, 7], result)
+
+
+if __name__ == '--main--':
+    unittest.main()
